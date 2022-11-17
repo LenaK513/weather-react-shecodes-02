@@ -6,6 +6,8 @@ import {
   SearchField,
   SearchBtn,
   CityName,
+  ListFirst,
+  ListSecond,
 } from "./Weather.styled";
 
 export function Weather() {
@@ -18,10 +20,10 @@ export function Weather() {
 
       <Title>
         <CityName> Kyiv </CityName>
-        <ul>
+        <ListFirst>
           <li>Friday</li>
           <li>Mostly Cloudy</li>
-        </ul>
+        </ListFirst>
 
         <Wrapper>
           <div>
@@ -31,11 +33,11 @@ export function Weather() {
             />
             0° C
           </div>
-          <ul>
+          <ListSecond>
             <li>Precipitation:15%</li>
             <li>Humidity:72%</li>
             <li>Wind:13km/h</li>
-          </ul>
+          </ListSecond>
         </Wrapper>
       </Title>
     </div>

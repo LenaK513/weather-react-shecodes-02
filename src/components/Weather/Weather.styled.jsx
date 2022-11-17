@@ -33,7 +33,18 @@ export const CityName = styled.h1`
   margin-top: 10px;
 `;
 
+export const ListFirst = styled.ul`
+  list-style: none;
+  text-align: start;
+  padding: 0;
+  padding-left: 15px;
+`;
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const ListSecond = styled.ul`
+  list-style: none;
+  text-align: start;
 `;

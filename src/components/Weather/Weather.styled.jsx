@@ -50,6 +50,17 @@ export const Wrapper = styled.div`
   padding: 10px;
 `;
 
+export const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Data = styled.span`
+  font-size: 32px;
+  margin-left: 5px;
+`;
+
 export const ListSecond = styled.ul`
   list-style: none;
   text-align: start;

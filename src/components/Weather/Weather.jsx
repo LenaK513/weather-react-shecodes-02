@@ -9,6 +9,8 @@ import {
   ListFirst,
   ListSecond,
   ItemList,
+  ImgWrapper,
+  Data,
 } from "./Weather.styled";
 
 export function Weather() {
@@ -27,13 +29,13 @@ export function Weather() {
         </ListFirst>
 
         <Wrapper>
-          <div>
+          <ImgWrapper>
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png "
               alt="Cloudy"
             />
-            0° C
-          </div>
+            <Data> 0°C</Data>
+          </ImgWrapper>
           <ListSecond>
             <ItemList>Precipitation:15%</ItemList>
             <ItemList>Humidity:72%</ItemList>

@@ -8,6 +8,7 @@ import {
   CityName,
   ListFirst,
   ListSecond,
+  ItemList,
 } from "./Weather.styled";
 
 export function Weather() {
@@ -21,8 +22,8 @@ export function Weather() {
       <Title>
         <CityName> Kyiv </CityName>
         <ListFirst>
-          <li>Friday</li>
-          <li>Mostly Cloudy</li>
+          <ItemList>Friday</ItemList>
+          <ItemList>Mostly Cloudy</ItemList>
         </ListFirst>
 
         <Wrapper>
@@ -34,9 +35,9 @@ export function Weather() {
             0° C
           </div>
           <ListSecond>
-            <li>Precipitation:15%</li>
-            <li>Humidity:72%</li>
-            <li>Wind:13km/h</li>
+            <ItemList>Precipitation:15%</ItemList>
+            <ItemList>Humidity:72%</ItemList>
+            <ItemList>Wind:13km/h</ItemList>
           </ListSecond>
         </Wrapper>
       </Title>

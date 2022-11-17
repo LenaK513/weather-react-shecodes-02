@@ -39,9 +39,15 @@ export const ListFirst = styled.ul`
   padding: 0;
   padding-left: 15px;
 `;
+
+export const ItemList = styled.li`
+  margin-bottom: 3px;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 `;
 
 export const ListSecond = styled.ul`

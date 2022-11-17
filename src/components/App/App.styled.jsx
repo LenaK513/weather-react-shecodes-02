@@ -7,4 +7,5 @@ export const Container = styled.div`
   text-align: center;
   background-color: #fff;
   border-radius: 4px;
+  border: 1px solid #ccc;
 `;

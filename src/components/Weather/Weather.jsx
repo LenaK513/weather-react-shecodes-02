@@ -11,6 +11,7 @@ import {
   ItemList,
   ImgWrapper,
   Data,
+  Unit,
 } from "./Weather.styled";
 
 export function Weather() {
@@ -34,7 +35,8 @@ export function Weather() {
               src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png "
               alt="Cloudy"
             />
-            <Data> 0°C</Data>
+            <Data> 0</Data>
+            <Unit>°C</Unit>
           </ImgWrapper>
           <ListSecond>
             <ItemList>Precipitation:15%</ItemList>

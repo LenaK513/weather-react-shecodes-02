@@ -57,10 +57,14 @@ export const ImgWrapper = styled.div`
 `;
 
 export const Data = styled.span`
-  font-size: 32px;
+  font-size: 44px;
   margin-left: 5px;
 `;
 
+export const Unit = styled.span`
+  position: relative;
+  top: -5px;
+`;
 export const ListSecond = styled.ul`
   list-style: none;
   text-align: start;

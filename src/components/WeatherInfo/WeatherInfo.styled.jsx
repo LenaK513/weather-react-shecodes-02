@@ -36,15 +36,6 @@ export const ImgWrapper = styled.div`
   align-items: center;
 `;
 
-export const Data = styled.span`
-  font-size: 44px;
-  margin-left: 5px;
-`;
-
-export const Unit = styled.span`
-  position: relative;
-  top: -5px;
-`;
 export const ListSecond = styled.ul`
   list-style: none;
   text-align: start;

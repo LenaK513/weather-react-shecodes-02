@@ -1,5 +1,6 @@
 import React from "react";
 import { ActualDate } from "../ActualDate/ActualDate";
+import { WeatherTemperature } from "../WeatherTemperature/WeatherTemperature";
 import {
   Title,
   CityName,
@@ -7,8 +8,6 @@ import {
   ItemList,
   Wrapper,
   ImgWrapper,
-  Data,
-  Unit,
   ListSecond,
 } from "./WeatherInfo.styled";
 export function WeatherInfo({ info }) {
@@ -25,8 +24,9 @@ export function WeatherInfo({ info }) {
       <Wrapper>
         <ImgWrapper>
           <img src={info.iconUrl} alt="Cloudy" />
-          <Data>{Math.round(info.temperature)}</Data>
-          <Unit>°C</Unit>
+          <WeatherTemperature celsius={info.temperature} />
+          {/* <Data>{Math.round(info.temperature)}</Data>
+          <Unit>°C</Unit> */}
         </ImgWrapper>
         <ListSecond>
           <ItemList>Pressure: {info.pressure} %</ItemList>

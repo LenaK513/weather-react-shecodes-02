@@ -1,27 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { ActualDate } from "../ActualDate/ActualDate";
-import {
-  Form,
-  Title,
-  Wrapper,
-  SearchField,
-  SearchBtn,
-  CityName,
-  ListFirst,
-  ListSecond,
-  ItemList,
-  ImgWrapper,
-  Data,
-  Unit,
-} from "./Weather.styled";
+// import { ActualDate } from "../ActualDate/ActualDate";
+import { WeatherInfo } from "../WeatherInfo/WeatherInfo";
+import { Form, SearchField, SearchBtn } from "./Weather.styled";
 
 export function Weather({ cityForSearch }) {
-  const [weatherData, setWeatherData] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  // const [loading, setLoading] = useState(false);
+  const [city, setCity] = useState(cityForSearch);
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
+      ready: true,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -30,18 +20,36 @@ export function Weather({ cityForSearch }) {
       weatherType: response.data.weather[0].description,
       pressure: response.data.main.pressure,
     });
-    setLoading(true);
+  }
+  function searchCity() {
+    const apiKey = "459eb898914d2b1561006ac93c82eeda";
+
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
-  if (loading) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    searchCity();
+  };
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
+
+  if (weatherData.ready) {
     return (
       <div>
-        <Form>
-          <SearchField type="search" placeholder="Enter a city" />
+        <Form onSubmit={handleSubmit}>
+          <SearchField
+            type="search"
+            placeholder="Enter a city"
+            onChange={handleCityChange}
+          />
           <SearchBtn type="button" value="Search" />
         </Form>
-
-        <Title>
+        <WeatherInfo info={weatherData} />
+        {/* <Title>
           <CityName>{weatherData.city}</CityName>
           <ListFirst>
             <ItemList>
@@ -65,14 +73,11 @@ export function Weather({ cityForSearch }) {
               <ItemList>Wind: {Math.round(weatherData.wind)} km/h</ItemList>
             </ListSecond>
           </Wrapper>
-        </Title>
+        </Title> */}
       </div>
     );
   } else {
-    const apiKey = "459eb898914d2b1561006ac93c82eeda";
-
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityForSearch}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    searchCity();
     return "loading.....";
   }
 }

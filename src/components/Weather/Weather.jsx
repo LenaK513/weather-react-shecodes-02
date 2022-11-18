@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ActualDate } from "../ActualDate/ActualDate";
 import {
   Form,
   Title,
@@ -24,7 +25,7 @@ export function Weather({ cityForSearch }) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
-      date: "Friday 00.00",
+      date: new Date(response.data.dt * 1000),
       humidity: response.data.main.humidity,
       weatherType: response.data.weather[0].description,
       pressure: response.data.main.pressure,
@@ -43,7 +44,9 @@ export function Weather({ cityForSearch }) {
         <Title>
           <CityName>{weatherData.city}</CityName>
           <ListFirst>
-            <ItemList>{weatherData.date} </ItemList>
+            <ItemList>
+              <ActualDate date={weatherData.date} />{" "}
+            </ItemList>
             <ItemList>{weatherData.weatherType}</ItemList>
           </ListFirst>
 

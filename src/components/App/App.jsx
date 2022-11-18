@@ -5,7 +5,7 @@ import { Weather } from "../Weather/Weather";
 export function App() {
   return (
     <Container>
-      <Weather cityForSearch="Kyiv" />
+      <Weather cityForSearch="Dnipro" />
     </Container>
   );
 }

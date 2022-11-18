@@ -24,10 +24,7 @@ export function WeatherInfo({ info }) {
 
       <Wrapper>
         <ImgWrapper>
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png "
-            alt="Cloudy"
-          />
+          <img src={info.iconUrl} alt="Cloudy" />
           <Data>{Math.round(info.temperature)}</Data>
           <Unit>°C</Unit>
         </ImgWrapper>

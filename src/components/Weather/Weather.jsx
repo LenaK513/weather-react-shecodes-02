@@ -19,6 +19,7 @@ export function Weather({ cityForSearch }) {
       humidity: response.data.main.humidity,
       weatherType: response.data.weather[0].description,
       pressure: response.data.main.pressure,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   function searchCity() {

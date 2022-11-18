@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Data, Unit } from "./WeatherTemperature.styled";
+import { Data, Unit, Link } from "./WeatherTemperature.styled";
 
 export function WeatherTemperature({ celsius }) {
   const [unit, setUnit] = useState("celsius");
@@ -20,10 +20,10 @@ export function WeatherTemperature({ celsius }) {
         <Data>{Math.round(celsius)}</Data>
         <Unit>
           °C |{" "}
-          <a href="/" onClick={changeToF}>
+          <Link href="/" onClick={changeToF}>
             {" "}
             °F
-          </a>
+          </Link>
         </Unit>
       </div>
     );
@@ -33,10 +33,10 @@ export function WeatherTemperature({ celsius }) {
       <div>
         <Data>{Math.round(fahTemp)}</Data>
         <Unit>
-          <a href="/" onClick={changeToC}>
+          <Link href="/" onClick={changeToC}>
             {" "}
             °C{" "}
-          </a>{" "}
+          </Link>{" "}
           | °F
         </Unit>
       </div>

@@ -9,3 +9,7 @@ export const Unit = styled.span`
   position: relative;
   top: -20px;
 `;
+
+export const Link = styled.a`
+  text-decoration: none;
+`;
